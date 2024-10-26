@@ -72,6 +72,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AgregarAsignatura.resx">
+      <DependentUpon>AgregarAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FAlumno.resx">
+      <DependentUpon>FAlumno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IngresoDatos.resx">
       <DependentUpon>IngresoDatos.cs</DependentUpon>
     </EmbeddedResource>

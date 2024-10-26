@@ -16,5 +16,7 @@ namespace Trabajo2
         {
             InitializeComponent();
         }
+
+        
     }
 }

@@ -16,5 +16,19 @@ namespace Trabajo2
         {
             InitializeComponent();
         }
+
+        private void alumnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FAlumno AgregarAlumno = new FAlumno();
+            AgregarAlumno.MdiParent = this.MdiParent;
+            AgregarAlumno.Show();
+        }
+
+        private void asignaturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarAsignatura agregarAsignatura = new AgregarAsignatura();
+            agregarAsignatura.MdiParent = this.MdiParent;
+            agregarAsignatura.Show();
+        }
     }
 }
