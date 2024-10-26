@@ -1,1 +1,11 @@
-Trabajo donde se vera el ingreso de datos, validación de tales y la muestra de ellos, donde se entregaran datos sobre alumnos y asignaturas a crear, todo esto guardado en una base de datos de forma local
+Ingreso de datos de alumnos y asignaturas
+
+
+-Ingreso alumnos
+
+En este apartado se podran ingresar datos del alumno, como el nombre, los dos apellidos, un correo y la matricula del alumno.
+Todo esto sera validado con respecto a cada dato que se ingrese y tambien será guardado en una base de datos, en caso de haber escrito mal algun dato del alumno se puede modificar cada dato y si el quiere eliminarlo tambien tendra la opción de hacerlo
+
+-Ingreso de asignaturas
+
+  Cuando 
