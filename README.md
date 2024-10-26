@@ -1,0 +1,1 @@
+Trabajo donde se vera el ingreso de datos, validación de tales y la muestra de ellos, donde se entregaran datos sobre alumnos y asignaturas a crear, todo esto guardado en una base de datos de forma local
