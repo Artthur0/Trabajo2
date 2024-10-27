@@ -41,14 +41,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvAlumnos = new System.Windows.Forms.DataGridView();
+            this.BtnActualizar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEliminar);
+            this.groupBox1.Controls.Add(this.BtnActualizar);
             this.groupBox1.Controls.Add(this.txNumMatri);
             this.groupBox1.Controls.Add(this.txApMat);
             this.groupBox1.Controls.Add(this.txEmail);
@@ -61,9 +65,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Location = new System.Drawing.Point(10, 29);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(286, 248);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -72,7 +76,7 @@
             // txNumMatri
             // 
             this.txNumMatri.Location = new System.Drawing.Point(110, 153);
-            this.txNumMatri.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txNumMatri.Margin = new System.Windows.Forms.Padding(2);
             this.txNumMatri.Name = "txNumMatri";
             this.txNumMatri.Size = new System.Drawing.Size(102, 20);
             this.txNumMatri.TabIndex = 9;
@@ -80,7 +84,7 @@
             // txApMat
             // 
             this.txApMat.Location = new System.Drawing.Point(94, 93);
-            this.txApMat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txApMat.Margin = new System.Windows.Forms.Padding(2);
             this.txApMat.Name = "txApMat";
             this.txApMat.Size = new System.Drawing.Size(102, 20);
             this.txApMat.TabIndex = 8;
@@ -88,7 +92,7 @@
             // txEmail
             // 
             this.txEmail.Location = new System.Drawing.Point(43, 124);
-            this.txEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txEmail.Name = "txEmail";
             this.txEmail.Size = new System.Drawing.Size(102, 20);
             this.txEmail.TabIndex = 8;
@@ -96,7 +100,7 @@
             // txApPat
             // 
             this.txApPat.Location = new System.Drawing.Point(92, 69);
-            this.txApPat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txApPat.Margin = new System.Windows.Forms.Padding(2);
             this.txApPat.Name = "txApPat";
             this.txApPat.Size = new System.Drawing.Size(102, 20);
             this.txApPat.TabIndex = 7;
@@ -144,7 +148,7 @@
             // txNombre
             // 
             this.txNombre.Location = new System.Drawing.Point(54, 40);
-            this.txNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txNombre.Name = "txNombre";
             this.txNombre.Size = new System.Drawing.Size(102, 20);
             this.txNombre.TabIndex = 2;
@@ -161,8 +165,8 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(226, 224);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Location = new System.Drawing.Point(205, 208);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(56, 19);
             this.btnGuardar.TabIndex = 0;
@@ -172,26 +176,47 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvAlumnos);
             this.groupBox2.Location = new System.Drawing.Point(310, 29);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(311, 243);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de Alumnos";
             // 
-            // dataGridView1
+            // dgvAlumnos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 18);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(302, 220);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlumnos.Location = new System.Drawing.Point(5, 18);
+            this.dgvAlumnos.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvAlumnos.Name = "dgvAlumnos";
+            this.dgvAlumnos.RowHeadersWidth = 51;
+            this.dgvAlumnos.RowTemplate.Height = 24;
+            this.dgvAlumnos.Size = new System.Drawing.Size(302, 220);
+            this.dgvAlumnos.TabIndex = 0;
+            this.dgvAlumnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlumnos_CellContentClick);
+            // 
+            // BtnActualizar
+            // 
+            this.BtnActualizar.Location = new System.Drawing.Point(119, 208);
+            this.BtnActualizar.Name = "BtnActualizar";
+            this.BtnActualizar.Size = new System.Drawing.Size(75, 19);
+            this.BtnActualizar.TabIndex = 10;
+            this.BtnActualizar.Text = "Actualizar";
+            this.BtnActualizar.UseVisualStyleBackColor = true;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(19, 208);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(73, 19);
+            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // FAlumno
             // 
@@ -200,13 +225,13 @@
             this.ClientSize = new System.Drawing.Size(651, 366);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FAlumno";
             this.Text = "FAlumno";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,6 +251,8 @@
         private System.Windows.Forms.TextBox txApMat;
         private System.Windows.Forms.TextBox txEmail;
         private System.Windows.Forms.TextBox txApPat;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvAlumnos;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button BtnActualizar;
     }
 }
