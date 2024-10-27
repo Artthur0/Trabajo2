@@ -54,7 +54,7 @@ namespace Trabajo2
                 {
                     db.OpenConnection();
                     // Consulta SQL para actualizar la asignatura
-                    var command = new SqlCommand("UPDATE Asignaturas SET NombreAsignatura = @NombreAsignatura, Creditos = @Creditos,  " + "WHERE CodigoAsignatura = @CodigoAsignatura", db.GetConnection());
+                    var command = new SqlCommand("UPDATE Asignaturas SET NombreAsignatura = @NombreAsignatura, Creditos = @Creditos  " + "WHERE CodigoAsignatura = @CodigoAsignatura", db.GetConnection());
 
                     command.Parameters.AddWithValue("@NombreAsignatura", txAsignatura.Text);
                     command.Parameters.AddWithValue("@Creditos", Convert.ToInt32(txCreditos.Text));
@@ -84,7 +84,7 @@ namespace Trabajo2
                 {
                     db.OpenConnection();
                     // Consulta SQL para eliminar la asignatura
-                    var command = new SqlCommand("UPDATE Asignaturas SET NombreAsignatura = @NombreAsignatura, Creditos = @Creditos,  " + "WHERE CodigoAsignatura = @CodigoAsignatura", db.GetConnection());
+                    var command = new SqlCommand("DELETE FROM Asignaturas WHERE CodigoAsignatura = @CodigoAsignatura", db.GetConnection());
                     command.Parameters.AddWithValue("@CodigoAsignatura", codigoAsignatura);
 
                     command.ExecuteNonQuery();
