@@ -105,7 +105,7 @@ namespace Trabajo2
             using (var db = new DatabaseConnection())
             {
                 db.OpenConnection();
-                var command = new SqlCommand("UPDATE Asignaturas SET NombreAsignatura = @NombreAsignatura, Creditos = @Creditos,  " + "WHERE CodigoAsignatura = @CodigoAsignatura", db.GetConnection());
+                var command = new SqlCommand("INSERT INTO Asignaturas (NombreAsignatura, Creditos)" + "VALUES (@NombreAsignatura, @Creditos)", db.GetConnection());
 
                 command.Parameters.AddWithValue("@NombreAsignatura", txAsignatura.Text);
                 command.Parameters.AddWithValue("@Creditos", Convert.ToInt32(txCreditos.Text));
@@ -114,6 +114,7 @@ namespace Trabajo2
                 db.CloseConnection();
 
                 MessageBox.Show("Asignatura creada correctamente.");
+                LoadAsignaturas();
             }
         }
     }
