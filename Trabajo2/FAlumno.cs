@@ -17,6 +17,9 @@ namespace Trabajo2
             InitializeComponent();
         }
 
-        
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
