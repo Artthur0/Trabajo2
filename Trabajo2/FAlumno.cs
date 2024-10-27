@@ -16,6 +16,7 @@ namespace Trabajo2
         public FAlumno()
         {
             InitializeComponent();
+            LoadAlumnos();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
