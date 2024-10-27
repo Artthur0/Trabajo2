@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txNumMatri = new System.Windows.Forms.TextBox();
+            this.txApMat = new System.Windows.Forms.TextBox();
+            this.txEmail = new System.Windows.Forms.TextBox();
+            this.txApPat = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.txNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txApPat = new System.Windows.Forms.TextBox();
-            this.txEmail = new System.Windows.Forms.TextBox();
-            this.txApMat = new System.Windows.Forms.TextBox();
-            this.txNumMatri = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -60,129 +60,147 @@
             this.groupBox1.Controls.Add(this.txNombre);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Location = new System.Drawing.Point(13, 36);
+            this.groupBox1.Location = new System.Drawing.Point(10, 29);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(382, 305);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(286, 248);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Alumno";
             // 
+            // txNumMatri
+            // 
+            this.txNumMatri.Location = new System.Drawing.Point(110, 153);
+            this.txNumMatri.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txNumMatri.Name = "txNumMatri";
+            this.txNumMatri.Size = new System.Drawing.Size(102, 20);
+            this.txNumMatri.TabIndex = 9;
+            // 
+            // txApMat
+            // 
+            this.txApMat.Location = new System.Drawing.Point(94, 93);
+            this.txApMat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txApMat.Name = "txApMat";
+            this.txApMat.Size = new System.Drawing.Size(102, 20);
+            this.txApMat.TabIndex = 8;
+            // 
+            // txEmail
+            // 
+            this.txEmail.Location = new System.Drawing.Point(43, 124);
+            this.txEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txEmail.Name = "txEmail";
+            this.txEmail.Size = new System.Drawing.Size(102, 20);
+            this.txEmail.TabIndex = 8;
+            // 
+            // txApPat
+            // 
+            this.txApPat.Location = new System.Drawing.Point(92, 69);
+            this.txApPat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txApPat.Name = "txApPat";
+            this.txApPat.Size = new System.Drawing.Size(102, 20);
+            this.txApPat.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(5, 153);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Numero de Matricula:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(5, 124);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Email:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 98);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Apellido Materno:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(5, 69);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Apellido Paterno:";
+            // 
             // txNombre
             // 
-            this.txNombre.Location = new System.Drawing.Point(72, 49);
+            this.txNombre.Location = new System.Drawing.Point(54, 40);
+            this.txNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txNombre.Name = "txNombre";
-            this.txNombre.Size = new System.Drawing.Size(134, 22);
+            this.txNombre.Size = new System.Drawing.Size(102, 20);
             this.txNombre.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 49);
+            this.label1.Location = new System.Drawing.Point(5, 40);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 16);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nombre:";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(301, 276);
+            this.btnGuardar.Location = new System.Drawing.Point(226, 224);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(56, 19);
             this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(414, 36);
+            this.groupBox2.Location = new System.Drawing.Point(310, 29);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(415, 299);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(311, 243);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de Alumnos";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Apellido Paterno:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 16);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Apellido Materno:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 153);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Email:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 188);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 16);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Numero de Matricula:";
-            // 
-            // txApPat
-            // 
-            this.txApPat.Location = new System.Drawing.Point(123, 85);
-            this.txApPat.Name = "txApPat";
-            this.txApPat.Size = new System.Drawing.Size(134, 22);
-            this.txApPat.TabIndex = 7;
-            // 
-            // txEmail
-            // 
-            this.txEmail.Location = new System.Drawing.Point(57, 153);
-            this.txEmail.Name = "txEmail";
-            this.txEmail.Size = new System.Drawing.Size(134, 22);
-            this.txEmail.TabIndex = 8;
-            // 
-            // txApMat
-            // 
-            this.txApMat.Location = new System.Drawing.Point(125, 114);
-            this.txApMat.Name = "txApMat";
-            this.txApMat.Size = new System.Drawing.Size(134, 22);
-            this.txApMat.TabIndex = 8;
-            // 
-            // txNumMatri
-            // 
-            this.txNumMatri.Location = new System.Drawing.Point(147, 188);
-            this.txNumMatri.Name = "txNumMatri";
-            this.txNumMatri.Size = new System.Drawing.Size(134, 22);
-            this.txNumMatri.TabIndex = 9;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 22);
+            this.dataGridView1.Location = new System.Drawing.Point(5, 18);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(402, 271);
+            this.dataGridView1.Size = new System.Drawing.Size(302, 220);
             this.dataGridView1.TabIndex = 0;
             // 
             // FAlumno
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 450);
+            this.ClientSize = new System.Drawing.Size(651, 366);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FAlumno";
             this.Text = "FAlumno";
             this.groupBox1.ResumeLayout(false);

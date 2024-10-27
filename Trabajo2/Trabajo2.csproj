@@ -53,6 +53,7 @@
     </Compile>
     <Compile Include="Clases\Alumno.cs" />
     <Compile Include="Clases\Asignatura.cs" />
+    <Compile Include="DatabaseConnection.cs" />
     <Compile Include="FAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
