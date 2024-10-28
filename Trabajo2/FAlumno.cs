@@ -55,7 +55,6 @@ namespace Trabajo2
             using (var db = new DatabaseConnection())
             {
                 db.OpenConnection();
-                // Consulta SQL para insertar un nuevo alumno
                 var command = new SqlCommand(
                     "INSERT INTO Alumnos (Nombre, ApellidoPat, ApellidoMat, Email, NumeroMatricula) " +
                     "VALUES (@Nombre, @ApellidoPat, @ApellidoMat, @Email, @NumeroMatricula)",
