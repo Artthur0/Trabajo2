@@ -21,6 +21,37 @@ namespace Trabajo2
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
+            if (String.IsNullOrEmpty(txNombre.Text))
+            {
+                MessageBox.Show("Ingrese un nombre valido");
+                txNombre.Focus();
+                return;
+            }
+            if (String.IsNullOrEmpty(txApPat.Text))
+            {
+                MessageBox.Show("Ingrese un apellido valido");
+                txApPat.Focus();
+                return;
+            }
+            if (String.IsNullOrEmpty(txApMat.Text))
+            {
+                MessageBox.Show("Ingrese un apellido valido");
+                txApMat.Focus();
+                return;
+            }
+            if (String.IsNullOrEmpty(txEmail.Text))
+            {
+                MessageBox.Show("Ingrese un correo valido");
+                txEmail.Focus();
+                return;
+            }
+            if (String.IsNullOrEmpty(txNumMatri.Text))
+            {
+                MessageBox.Show("Ingrese una matris valida");
+                txNumMatri.Focus();
+                return;
+            }
             using (var db = new DatabaseConnection())
             {
                 db.OpenConnection();

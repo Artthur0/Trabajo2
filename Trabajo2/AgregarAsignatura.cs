@@ -13,6 +13,7 @@ namespace Trabajo2
 {
     public partial class AgregarAsignatura : Form
     {
+
         public AgregarAsignatura()
         {
             InitializeComponent();
@@ -102,6 +103,23 @@ namespace Trabajo2
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            //esta variable sirve para identificar si el valor de creditos es un número
+            decimal cred;
+            bool real = decimal.TryParse(txCreditos.Text, out cred);
+
+            //esto es para validar que los campos esten con algun valor
+            if (String.IsNullOrEmpty(txAsignatura.Text))
+            {
+                MessageBox.Show("Ingrese una Asignatura valida");
+                txAsignatura.Focus();
+                return;
+            }
+            if (!real)
+            {
+                MessageBox.Show("Ingresa un valor valido para los creditos");
+                txCreditos.Focus();
+                return;
+            }
             using (var db = new DatabaseConnection())
             {
                 db.OpenConnection();
