@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,37 +22,44 @@ namespace Trabajo2
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
             if (String.IsNullOrEmpty(txNombre.Text))
             {
-                MessageBox.Show("Ingrese un nombre valido");
+                MessageBox.Show("Ingrese un nombre válido.");
                 txNombre.Focus();
                 return;
             }
             if (String.IsNullOrEmpty(txApPat.Text))
             {
-                MessageBox.Show("Ingrese un apellido valido");
+                MessageBox.Show("Ingrese un apellido válido.");
                 txApPat.Focus();
                 return;
             }
             if (String.IsNullOrEmpty(txApMat.Text))
             {
-                MessageBox.Show("Ingrese un apellido valido");
+                MessageBox.Show("Ingrese un apellido válido.");
                 txApMat.Focus();
                 return;
             }
             if (String.IsNullOrEmpty(txEmail.Text))
             {
-                MessageBox.Show("Ingrese un correo valido");
+                MessageBox.Show("Ingrese un correo válido.");
+                txEmail.Focus();
+                return;
+            }
+            // Verificar que el correo tenga un formato válido
+            if (!EsCorreoValido(txEmail.Text))
+            {
+                MessageBox.Show("Ingrese un correo electrónico en formato válido.");
                 txEmail.Focus();
                 return;
             }
             if (String.IsNullOrEmpty(txNumMatri.Text))
             {
-                MessageBox.Show("Ingrese una matris valida");
+                MessageBox.Show("Ingrese una matrícula válida.");
                 txNumMatri.Focus();
                 return;
             }
+
             using (var db = new DatabaseConnection())
             {
                 db.OpenConnection();
@@ -71,6 +79,20 @@ namespace Trabajo2
 
                 MessageBox.Show("Alumno creado correctamente.");
                 LoadAlumnos(); // Recargar la lista de alumnos para reflejar los cambios
+            }
+        }
+
+        // Función para validar el formato del correo electrónico
+        private bool EsCorreoValido(string correo)
+        {
+            try
+            {
+                var mailAddress = new MailAddress(correo);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
             }
         }
 
