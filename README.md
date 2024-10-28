@@ -2,7 +2,7 @@
 En este codigo se podra ingresar datos de alumnos y asignaturas las cuales seran guardadas en una base de datos que tendran crear ustedes mismos
 
 
-## Para crear la base de datos
+## Para crear la base de datos (En caso de no querer ver el archivo .scrip)
 Para que pueda crear la base de datos en su computador tendra que utilizar las siguientes lineas de código las cuales podran ayudar para almacenar los datos
 
 - [Codigo para modificar](Trabajo2/DatabaseConnection.cs)
