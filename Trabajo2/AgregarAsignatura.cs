@@ -1,5 +1,6 @@
 ﻿using BL;
 using BOL;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,6 @@ namespace Trabajo2
         public AgregarAsignatura()
         {
             InitializeComponent();
-            LoadAsignaturas();
         }
 
         private AsignaturaBL asignaturaBL = new AsignaturaBL();
@@ -50,7 +50,7 @@ namespace Trabajo2
                 Asignatura asignatura = new Asignatura
                 {
                     CodigoAsignatura = codigoAsignatura,
-                    NombreAsig = txAsignatura.Text,
+                    NombreAsignatura = txAsignatura.Text,
                     Creditos = int.Parse(txCreditos.Text)
                 };
 
@@ -58,7 +58,6 @@ namespace Trabajo2
                 asignaturaBL.ActualizarAsignatura(asignatura);
 
                 MessageBox.Show("Asignatura actualizada con éxito.");
-                LoadAsignaturas(); // Recarga la lista actualizada en el DataGridView
             }
             else
             {
@@ -73,7 +72,6 @@ namespace Trabajo2
                 int codigoAsignatura = int.Parse(dgvAsignaturas.SelectedRows[0].Cells["CodigoAsignatura"].Value.ToString());
                 asignaturaBL.EliminarAsignatura(codigoAsignatura);
                 MessageBox.Show("Asignatura eliminada con éxito.");
-                LoadAsignaturas();
             }
             else
             {
@@ -85,18 +83,18 @@ namespace Trabajo2
         {
             Asignatura asignatura = new Asignatura
             {
-                NombreAsig = txAsignatura.Text,
+                NombreAsignatura = txAsignatura.Text,
                 Creditos = int.Parse(txCreditos.Text)
             };
 
             asignaturaBL.AgregarAsignatura(asignatura);
             MessageBox.Show("Asignatura guardada con éxito.");
-            LoadAsignaturas();
         }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-
+            var asignatura = asignaturaBL.ObtenerTodasLasAsignaturas();
+            dgvAsignaturas.DataSource = asignatura;
         }
     }
 }

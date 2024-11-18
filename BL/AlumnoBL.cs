@@ -17,11 +17,6 @@ namespace BL
             alumnoDAL.AgregarAlumno(alumno);
         }
 
-        public List<Alumno> ListarAlumnos()
-        {
-            return alumnoDAL.ListarAlumnos();
-        }
-
         public void ActualizarAlumno(Alumno alumno)
         {
             alumnoDAL.ActualizarAlumno(alumno);

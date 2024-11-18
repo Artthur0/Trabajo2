@@ -30,34 +30,6 @@ namespace DAL
             }
         }
 
-        public List<Alumno> ListarAlumnos()
-        {
-            List<Alumno> alumnos = new List<Alumno>();
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = "SELECT * FROM Alumnos";
-                SqlCommand cmd = new SqlCommand(query, conn);
-
-                conn.Open();
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        alumnos.Add(new Alumno
-                        {
-                            IDAlumno = (int)reader["IDAlumno"],
-                            Nombre = reader["Nombre"].ToString(),
-                            ApellidoPat = reader["ApellidoPat"].ToString(),
-                            ApellidoMat = reader["ApellidoMat"].ToString(),
-                            Email = reader["Email"].ToString(),
-                            NumeroMatricula = reader["NumeroMatricula"].ToString()
-                        });
-                    }
-                }
-            }
-            return alumnos;
-        }
-
         public void ActualizarAlumno(Alumno alumno)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))

@@ -19,7 +19,6 @@ namespace Trabajo2
         public FAlumno()
         {
             InitializeComponent();
-            LoadAlumnos();
         }
 
         private AlumnoBL alumnoBL = new AlumnoBL();
@@ -36,7 +35,6 @@ namespace Trabajo2
             };
             alumnoBL.AgregarAlumno(alumno);
             MessageBox.Show("Alumno guardado con éxito.");
-            LoadAlumnos();
         }
 
         // Función para validar el formato del correo electrónico
@@ -68,7 +66,6 @@ namespace Trabajo2
                 };
                 alumnoBL.ActualizarAlumno(alumno);
                 MessageBox.Show("Alumno actualizado con éxito.");
-                LoadAlumnos();
             }
             else
             {
@@ -83,7 +80,6 @@ namespace Trabajo2
                 int idAlumno = Convert.ToInt32(dgvAlumnos.SelectedRows[0].Cells["IDAlumno"].Value);
                 alumnoBL.EliminarAlumno(idAlumno);
                 MessageBox.Show("Alumno eliminado con éxito.");
-                LoadAlumnos();
             }
             else
             {
@@ -104,14 +100,10 @@ namespace Trabajo2
             }
         }
 
-        private void LoadAlumnos()
-        {
-            dgvAlumnos.DataSource = alumnoBL.ObtenerTodosLosAlumnos();
-        }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            var alumnos = alumnoBL.ListarAlumnos();
+            var alumnos = alumnoBL.ObtenerTodosLosAlumnos();
             dgvAlumnos.DataSource = alumnos;
         }
 

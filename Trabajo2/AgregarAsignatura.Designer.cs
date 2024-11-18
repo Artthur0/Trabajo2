@@ -30,6 +30,7 @@
         {
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnListar = new System.Windows.Forms.Button();
             this.btnEliminarAsignatura = new System.Windows.Forms.Button();
             this.btnActualizarAsignatura = new System.Windows.Forms.Button();
             this.txCreditos = new System.Windows.Forms.TextBox();
@@ -38,7 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvAsignaturas = new System.Windows.Forms.DataGridView();
-            this.btnListar = new System.Windows.Forms.Button();
+            this.btnDescargar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).BeginInit();
@@ -57,6 +58,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnDescargar);
             this.groupBox1.Controls.Add(this.btnListar);
             this.groupBox1.Controls.Add(this.btnEliminarAsignatura);
             this.groupBox1.Controls.Add(this.btnActualizarAsignatura);
@@ -69,10 +71,20 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(304, 230);
+            this.groupBox1.Size = new System.Drawing.Size(304, 262);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asignatura";
+            // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(130, 184);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(56, 19);
+            this.btnListar.TabIndex = 11;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // btnEliminarAsignatura
             // 
@@ -153,15 +165,14 @@
             this.dgvAsignaturas.TabIndex = 0;
             this.dgvAsignaturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsignaturas_CellContentClick);
             // 
-            // btnListar
+            // btnDescargar
             // 
-            this.btnListar.Location = new System.Drawing.Point(130, 184);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(56, 19);
-            this.btnListar.TabIndex = 11;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            this.btnDescargar.Location = new System.Drawing.Point(106, 228);
+            this.btnDescargar.Name = "btnDescargar";
+            this.btnDescargar.Size = new System.Drawing.Size(75, 23);
+            this.btnDescargar.TabIndex = 12;
+            this.btnDescargar.Text = "Descargar";
+            this.btnDescargar.UseVisualStyleBackColor = true;
             // 
             // AgregarAsignatura
             // 
@@ -194,5 +205,6 @@
         private System.Windows.Forms.Button btnEliminarAsignatura;
         private System.Windows.Forms.Button btnActualizarAsignatura;
         private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Button btnDescargar;
     }
 }

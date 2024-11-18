@@ -16,9 +16,9 @@ namespace DAL
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO Asignaturas (NombreAsig, Creditos) VALUES (@NombreAsig, @Creditos)";
+                string query = "INSERT INTO Asignaturas (NombreAsignatura, Creditos) VALUES (@NombreAsignatura, @Creditos)";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@NombreAsig", asignatura.NombreAsig);
+                cmd.Parameters.AddWithValue("@NombreAsignatura", asignatura.NombreAsignatura);
                 cmd.Parameters.AddWithValue("@Creditos", asignatura.Creditos);
 
                 conn.Open();
@@ -30,11 +30,11 @@ namespace DAL
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "UPDATE Asignaturas SET NombreAsig = @NombreAsig, Creditos = @Creditos " +
+                string query = "UPDATE Asignaturas SET NombreAsignatura = @NombreAsignatura, Creditos = @Creditos " +
                                "WHERE CodigoAsignatura = @CodigoAsignatura";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@CodigoAsignatura", asignatura.CodigoAsignatura);
-                cmd.Parameters.AddWithValue("@NombreAsig", asignatura.NombreAsig);
+                cmd.Parameters.AddWithValue("@NombreAsignatura", asignatura.NombreAsignatura);
                 cmd.Parameters.AddWithValue("@Creditos", asignatura.Creditos);
 
                 conn.Open();
@@ -71,7 +71,7 @@ namespace DAL
                         asignaturas.Add(new Asignatura
                         {
                             CodigoAsignatura = (int)reader["CodigoAsignatura"],
-                            NombreAsig = reader["NombreAsig"].ToString(),
+                            NombreAsignatura = reader["NombreAsignatura"].ToString(),
                             Creditos = (int)reader["Creditos"]
                         });
                     }
