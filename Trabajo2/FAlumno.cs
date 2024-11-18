@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,6 +37,20 @@ namespace Trabajo2
             alumnoBL.AgregarAlumno(alumno);
             MessageBox.Show("Alumno guardado con éxito.");
             LoadAlumnos();
+        }
+
+        // Función para validar el formato del correo electrónico
+        private bool EsCorreoValido(string correo)
+        {
+            try
+            {
+                var mailAddress = new MailAddress(correo);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
         }
 
         private void BtnActualizar_Click(object sender, EventArgs e)
@@ -99,5 +114,7 @@ namespace Trabajo2
             var alumnos = alumnoBL.ListarAlumnos();
             dgvAlumnos.DataSource = alumnos;
         }
+
+       
     }
 }

@@ -15,6 +15,7 @@ namespace Trabajo2
 {
     public partial class AgregarAsignatura : Form
     {
+
         public AgregarAsignatura()
         {
             InitializeComponent();
