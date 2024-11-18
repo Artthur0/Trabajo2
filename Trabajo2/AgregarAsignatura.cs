@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BL;
+using BOL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,18 +21,11 @@ namespace Trabajo2
             LoadAsignaturas();
         }
 
+        private AsignaturaBL asignaturaBL = new AsignaturaBL();
+
         private void LoadAsignaturas()
         {
-            using (var db = new DatabaseConnection())
-            {
-                db.OpenConnection();
-                var command = new SqlCommand("SELECT * FROM Asignaturas", db.GetConnection());
-                var adapter = new SqlDataAdapter(command);
-                var table = new System.Data.DataTable();
-                adapter.Fill(table);
-                dgvAsignaturas.DataSource = table;
-                db.CloseConnection();
-            }
+            dgvAsignaturas.DataSource = asignaturaBL.ObtenerTodasLasAsignaturas();
         }
 
         private void dgvAsignaturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -38,7 +33,7 @@ namespace Trabajo2
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvAsignaturas.Rows[e.RowIndex];
-                txAsignatura.Text = row.Cells["NombreAsignatura"].Value.ToString();
+                txAsignatura.Text = row.Cells["NombreAsig"].Value.ToString();
                 txCreditos.Text = row.Cells["Creditos"].Value.ToString();
             }
         }
@@ -47,25 +42,22 @@ namespace Trabajo2
         {
             if (dgvAsignaturas.SelectedRows.Count > 0)
             {
-                // Obtener el código de la asignatura seleccionada
+                // Recupera el CodigoAsignatura de la fila seleccionada
                 int codigoAsignatura = Convert.ToInt32(dgvAsignaturas.SelectedRows[0].Cells["CodigoAsignatura"].Value);
 
-                using (var db = new DatabaseConnection())
+                // Crea un objeto Asignatura con los datos actualizados
+                Asignatura asignatura = new Asignatura
                 {
-                    db.OpenConnection();
-                    // Consulta SQL para actualizar la asignatura
-                    var command = new SqlCommand("UPDATE Asignaturas SET NombreAsignatura = @NombreAsignatura, Creditos = @Creditos  " + "WHERE CodigoAsignatura = @CodigoAsignatura", db.GetConnection());
+                    CodigoAsignatura = codigoAsignatura,
+                    NombreAsig = txAsignatura.Text,
+                    Creditos = int.Parse(txCreditos.Text)
+                };
 
-                    command.Parameters.AddWithValue("@NombreAsignatura", txAsignatura.Text);
-                    command.Parameters.AddWithValue("@Creditos", Convert.ToInt32(txCreditos.Text));
-                    command.Parameters.AddWithValue("@CodigoAsignatura", codigoAsignatura);
+                // Llama al método de actualización en BL
+                asignaturaBL.ActualizarAsignatura(asignatura);
 
-                    command.ExecuteNonQuery();
-                    db.CloseConnection();
-
-                    MessageBox.Show("Asignatura actualizada correctamente.");
-                    LoadAsignaturas(); // Recargar la lista de asignaturas para reflejar los cambios
-                }
+                MessageBox.Show("Asignatura actualizada con éxito.");
+                LoadAsignaturas(); // Recarga la lista actualizada en el DataGridView
             }
             else
             {
@@ -77,45 +69,33 @@ namespace Trabajo2
         {
             if (dgvAsignaturas.SelectedRows.Count > 0)
             {
-                // Obtener el código de la asignatura seleccionada
-                int codigoAsignatura = Convert.ToInt32(dgvAsignaturas.SelectedRows[0].Cells["CodigoAsignatura"].Value);
-
-                using (var db = new DatabaseConnection())
-                {
-                    db.OpenConnection();
-                    // Consulta SQL para eliminar la asignatura
-                    var command = new SqlCommand("DELETE FROM Asignaturas WHERE CodigoAsignatura = @CodigoAsignatura", db.GetConnection());
-                    command.Parameters.AddWithValue("@CodigoAsignatura", codigoAsignatura);
-
-                    command.ExecuteNonQuery();
-                    db.CloseConnection();
-
-                    MessageBox.Show("Asignatura eliminada correctamente.");
-                    LoadAsignaturas(); // Recargar la lista de asignaturas para reflejar los cambios
-                }
+                int codigoAsignatura = int.Parse(dgvAsignaturas.SelectedRows[0].Cells["CodigoAsignatura"].Value.ToString());
+                asignaturaBL.EliminarAsignatura(codigoAsignatura);
+                MessageBox.Show("Asignatura eliminada con éxito.");
+                LoadAsignaturas();
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione una asignatura para eliminar.");
+                MessageBox.Show("Seleccione una asignatura para eliminar.");
             }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            using (var db = new DatabaseConnection())
+            Asignatura asignatura = new Asignatura
             {
-                db.OpenConnection();
-                var command = new SqlCommand("INSERT INTO Asignaturas (NombreAsignatura, Creditos)" + "VALUES (@NombreAsignatura, @Creditos)", db.GetConnection());
+                NombreAsig = txAsignatura.Text,
+                Creditos = int.Parse(txCreditos.Text)
+            };
 
-                command.Parameters.AddWithValue("@NombreAsignatura", txAsignatura.Text);
-                command.Parameters.AddWithValue("@Creditos", Convert.ToInt32(txCreditos.Text));
+            asignaturaBL.AgregarAsignatura(asignatura);
+            MessageBox.Show("Asignatura guardada con éxito.");
+            LoadAsignaturas();
+        }
 
-                command.ExecuteNonQuery();
-                db.CloseConnection();
+        private void btnListar_Click(object sender, EventArgs e)
+        {
 
-                MessageBox.Show("Asignatura creada correctamente.");
-                LoadAsignaturas();
-            }
         }
     }
 }
